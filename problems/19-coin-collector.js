@@ -24,8 +24,20 @@ Example 3:
   console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
 
 ***********************************************************************/
+
 function coinCollector(numCoins) {
-  // Your code here
+  let numOfCoins = 0;
+  let arrOfCoins = [];
+
+  return coin => {
+    if (numOfCoins === numCoins - 1) {
+      arrOfCoins.push(coin);
+      return arrOfCoins;
+    } else {
+      arrOfCoins.push(coin);
+      numOfCoins++;
+    }
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

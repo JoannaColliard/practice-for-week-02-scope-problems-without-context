@@ -43,8 +43,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  let arr = [];
+
+  function _curriedSum(arg) {
+      arr.push(arg);
+
+      if (arr.length === numArgs) {
+          return arr.reduce((sum, currentValue) => sum + currentValue);
+      } else {
+          return _curriedSum;
+      }
+  }
+
+  return _curriedSum;
 }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = curriedSum;
